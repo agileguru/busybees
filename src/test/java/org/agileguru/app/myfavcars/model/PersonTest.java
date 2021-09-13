@@ -23,5 +23,21 @@ class PersonTest {
 		assertThat(person.getDad().getName()).isNotNull().isEqualTo("Raghupathy");
 		
 	}
+	
+	@Test
+	void testPersonAttributes() {
+		Assertions.assertThat(person).isNotNull();
+		dad.setAge(79);
+		dad.setSurName("Ratnavelu");
+		person.setDad(dad);
+		person.setMom(mom);
+		person.setCar(car);
+		car.setManufacturer("Honda");
+		
+		assertThat(person.getDad().getName()).isNotNull().isEqualTo("Raghupathy");
+		assertThat(person.getDad().getAge()).isNotNull().isEqualTo(79);
+		assertThat(person.getDad().getSurName()).isNotNull().isEqualTo("Ratnavelu");
+		
+	}
 
 }
