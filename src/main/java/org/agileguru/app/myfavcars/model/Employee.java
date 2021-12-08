@@ -49,6 +49,9 @@ public class Employee implements Serializable {
 	}
 
 	public void setCity(String city) {
+		if ( null == city || city.isEmpty() || city.trim().isEmpty() ) {
+			throw new RuntimeException("City Cannot be empty");
+		}
 		this.city = city;
 	}
 
